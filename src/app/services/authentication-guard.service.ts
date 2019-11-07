@@ -1,23 +1,27 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationGuardService implements CanActivate {
-  constructor(private router: Router) {
-    console.log('AuthenticationGuardService - constructor');
+  loggedIn = false;
+
+  constructor(/*private _store: Store<any>,*/ private router: Router) {
+    // this._store
+    //   .select((state) => state.authReducer)
+    //   .subscribe((res) => {
+    //     this.loggedIn = res.login;
+    //     this.maybeLogout();
+    //   });
   }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    console.log('AuthenticationGuardService - canActivate');
-    // if (this.userService.isValid()) {
-    // return true;
-    // } else {
-    this.router.navigate(['/login'], {
-      queryParams: {
-        return: state.url,
-      },
-    });
-    return false;
-    // }
+  canActivate(): boolean {
+    this.maybeLogout();
+    return this.loggedIn;
+  }
+
+  maybeLogout(): void {
+    if (!this.loggedIn) {
+      this.router.navigateByUrl('login');
+    }
   }
 }
