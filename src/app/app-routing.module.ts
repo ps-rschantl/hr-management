@@ -16,7 +16,7 @@ const routes: Routes = [
         redirectTo: 'dashboard',
       },
       {
-        path: 'dashboar',
+        path: 'dashboard',
         component: DashboardComponent,
       },
     ],

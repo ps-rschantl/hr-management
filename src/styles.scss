@@ -6,10 +6,16 @@ body {
 }
 body {
   margin: 0;
+  background: #f5f5f5;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-h1 {
-  font-size: 72px;
-  text-align: center;
+body,
+.header,
+.toggle-theme,
+.mat-card {
+  transition-property: background, color !important;
+  transition-duration: 0.4s !important;
+  transition-timing-function: ease !important;
+  transition-delay: 0s !important;
 }

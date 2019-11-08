@@ -12,4 +12,10 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
   @include angular-material-theme($dark-theme);
   background: black;
   color: white;
+
+  .header .toggle-theme,
+  .header .sidenav-open,
+  .sidenav .sidenav-close {
+    color: black !important;
+  }
 }

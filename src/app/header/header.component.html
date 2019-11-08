@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="header">
+  <button md-icon-button color="primary" (click)="sideNav.toggle()" class="sidenav-open">
+    <mat-icon aria-label="Menu" class="material-icons">menu</mat-icon>
+  </button>
+  <h1>{{ title }}</h1>
+
+  <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon"
+      >verified_user</mat-icon
+    > -->
+
+  <button mat-icon-button class="toggle-theme" color="primary" (click)="onToggleTheme()">
+    <mat-icon>wb_sunny</mat-icon>
+  </button>
+</mat-toolbar>

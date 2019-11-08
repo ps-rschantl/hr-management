@@ -1,5 +1,11 @@
-<h1>{{ title }}</h1>
-<button mat-icon-button class="toggle-theme" color="primary" (click)="onToggleTheme()">
-  <mat-icon class="">wb_sunny</mat-icon>
-</button>
-<router-outlet></router-outlet>
+<!-- TODO display only when user is logged in -->
+
+<mat-sidenav-container class="main">
+  <mat-sidenav #sideNav mode="over">
+    <app-sidenav [sideNav]="sideNav"></app-sidenav>
+  </mat-sidenav>
+
+  <app-header (toggleTheme)="onToggleTheme()" [sideNav]="sideNav" title="{{ title }}"></app-header>
+
+  <router-outlet></router-outlet>
+</mat-sidenav-container>

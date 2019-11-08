@@ -15,8 +15,8 @@ export class AuthenticationGuardService implements CanActivate {
   }
 
   canActivate(): boolean {
-    this.maybeLogout();
-    return this.loggedIn;
+    // this.maybeLogout();
+    return true;
   }
 
   maybeLogout(): void {
