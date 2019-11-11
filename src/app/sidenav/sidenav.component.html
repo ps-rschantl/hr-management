@@ -5,5 +5,9 @@
     </button>
   </mat-toolbar>
 
-  <!-- <md-nav-list></md-nav-list> -->
+  <mat-nav-list>
+    <button mat-button [routerLink]="'/dashboard'">Dashboard</button>
+    <button mat-button [routerLink]="'/employees'">Employees</button>
+    <button mat-button>Loggout</button>
+  </mat-nav-list>
 </div>

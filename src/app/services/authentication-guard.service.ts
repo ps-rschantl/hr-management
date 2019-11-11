@@ -3,9 +3,9 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationGuardService implements CanActivate {
-  loggedIn = false;
+  loggedIn = true;
 
-  constructor(/*private _store: Store<any>,*/ private router: Router) {
+  constructor(private router: Router) {
     // this._store
     //   .select((state) => state.authReducer)
     //   .subscribe((res) => {
@@ -15,8 +15,9 @@ export class AuthenticationGuardService implements CanActivate {
   }
 
   canActivate(): boolean {
-    // this.maybeLogout();
-    return true;
+    console.log('canActivate');
+    this.maybeLogout();
+    return this.loggedIn;
   }
 
   maybeLogout(): void {
