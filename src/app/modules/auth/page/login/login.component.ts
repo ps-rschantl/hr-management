@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/service/authentication/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,13 +14,15 @@ export class LoginComponent implements OnInit {
     password: ['1111', Validators.required],
   });
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {}
 
   ngOnInit() {}
 
   onSubmit() {
     console.log(this.loginForm.value);
     console.log(this.loginForm);
-    this.router.navigateByUrl('dashboard');
+    if (this.authService.login()) {
+      this.router.navigateByUrl('dashboard');
+    }
   }
 }

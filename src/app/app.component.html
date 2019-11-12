@@ -1,11 +1,1 @@
-<!-- TODO display only when user is logged in -->
-
-<mat-sidenav-container class="main">
-  <mat-sidenav #sideNav mode="over">
-    <app-sidenav [sideNav]="sideNav"></app-sidenav>
-  </mat-sidenav>
-
-  <app-header (toggleTheme)="onToggleTheme()" [sideNav]="sideNav" title="{{ title }}"></app-header>
-
-  <router-outlet></router-outlet>
-</mat-sidenav-container>
+<router-outlet></router-outlet>

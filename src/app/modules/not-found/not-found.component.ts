@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class NotFoundComponent implements OnInit {
   title = 'Oops! 404';
   redirectTimerInterval = 1000;
-  redirectTimerSeconds = 5;
+  redirectTimerSeconds = 3;
 
   constructor(private router: Router) {}
 

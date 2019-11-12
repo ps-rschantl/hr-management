@@ -1,0 +1,11 @@
+<mat-sidenav-container class="main">
+  <mat-sidenav #sideNav mode="over">
+    <app-sidenav [sideNav]="sideNav"></app-sidenav>
+  </mat-sidenav>
+
+  <app-header (toggleTheme)="onToggleTheme()" [sideNav]="sideNav" title="{{ title }}"></app-header>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

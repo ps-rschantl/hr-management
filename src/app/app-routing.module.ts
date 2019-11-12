@@ -1,14 +1,14 @@
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { AuthenticationGuardService } from './services/authentication-guard.service';
+import { AuthLayoutComponent } from './core/components/layout/auth-layout/auth-layout.component';
+import { ContentLayoutComponent } from './core/components/layout/content-layout/content-layout.component';
+import { AuthGuard } from './core/guard/auth.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    canActivate: [AuthenticationGuardService],
+    canActivate: [AuthGuard],
+    component: ContentLayoutComponent,
     children: [
       {
         path: '',
@@ -17,21 +17,25 @@ const routes: Routes = [
       },
       {
         path: 'dashboard',
-        loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+        loadChildren: () =>
+          import('./modules/dashboard/dashboard.module').then((m) => m.DashboardModule),
       },
       {
         path: 'employees',
-        loadChildren: () => import('./employees/employees.module').then((m) => m.EmployeesModule),
+        loadChildren: () =>
+          import('./modules/employees/employees.module').then((m) => m.EmployeesModule),
       },
     ],
   },
   {
     path: 'login',
-    component: LoginComponent,
+    component: AuthLayoutComponent,
+    loadChildren: () => import('./modules/auth/auth.module').then((m) => m.AuthModule),
   },
   {
     path: '**',
-    component: NotFoundComponent,
+    loadChildren: () =>
+      import('./modules/not-found/not-found.module').then((m) => m.NotFoundModule),
   },
 ];
 
