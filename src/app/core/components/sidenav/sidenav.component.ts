@@ -10,7 +10,7 @@ export class SidenavComponent {
   routes = [
     { route: '/dashboard', title: 'Dashboard', icon: 'dashboard' },
     { route: '/employees', title: 'Employees', icon: 'people' },
-    { route: '/projects', title: 'Projects', icon: 'work' },
+    { route: '/projects', title: 'Projects', icon: 'folder' },
   ];
 
   @Input() sideNav: MatSidenav;

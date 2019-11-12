@@ -1,4 +1,4 @@
-import { EmployeesComponent } from './employees.component';
+import { EmployeesComponent } from './page/employees.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 

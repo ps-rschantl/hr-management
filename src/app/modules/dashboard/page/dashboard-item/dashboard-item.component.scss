@@ -1,0 +1,26 @@
+:host {
+  flex: 0 0 40%;
+
+  .dashboard-item {
+    text-decoration: none;
+
+    .mat-card-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+  mat-icon {
+    display: block;
+    width: 120px;
+    height: 120px;
+    font-size: 120px;
+  }
+
+  .title {
+    display: block;
+    font-size: 44px;
+  }
+}
