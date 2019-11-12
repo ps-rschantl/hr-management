@@ -16,5 +16,9 @@
       <mat-icon matListIcon>{{ item.icon }}</mat-icon>
       {{ item.title }}
     </a>
+    <a mat-list-item (click)="logout()">
+      <mat-icon matListIcon></mat-icon>
+      Loggout
+    </a>
   </mat-nav-list>
 </div>

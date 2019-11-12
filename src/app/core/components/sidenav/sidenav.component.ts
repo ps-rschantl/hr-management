@@ -14,4 +14,8 @@ export class SidenavComponent {
   ];
 
   @Input() sideNav: MatSidenav;
+
+  logout() {
+    console.log('logout');
+  }
 }
