@@ -1,5 +1,6 @@
 .header {
-  .sidenav-open {
+  .sidenav-open,
+  .particles-btn {
     border: none;
     background: none;
     outline: none;
@@ -10,5 +11,11 @@
   .toggle-theme {
     margin-left: auto;
     color: white;
+  }
+
+  .particles-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
   }
 }
