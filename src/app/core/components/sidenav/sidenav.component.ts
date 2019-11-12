@@ -17,5 +17,6 @@ export class SidenavComponent {
 
   logout() {
     console.log('logout');
+    this.sideNav.close();
   }
 }
