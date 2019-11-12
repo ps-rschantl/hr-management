@@ -7,5 +7,11 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent {
+  routes = [
+    { route: '/dashboard', title: 'Dashboard', icon: 'dashboard' },
+    { route: '/employees', title: 'Employees', icon: 'people' },
+    { route: '/projects', title: 'Projects', icon: 'work' },
+  ];
+
   @Input() sideNav: MatSidenav;
 }

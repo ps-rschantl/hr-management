@@ -1,4 +1,6 @@
 .sidenav {
+  min-width: 250px;
+
   .sidenav-close {
     border: none;
     background: none;
@@ -6,5 +8,20 @@
     color: white;
     cursor: pointer;
     margin-left: auto;
+  }
+}
+
+.list-item-active {
+  position: relative;
+
+  &::after {
+    content: '';
+    background: #3f51b5;
+    width: 10px;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }

@@ -6,8 +6,15 @@
   </mat-toolbar>
 
   <mat-nav-list>
-    <button mat-button [routerLink]="'/dashboard'">Dashboard</button>
-    <button mat-button [routerLink]="'/employees'">Employees</button>
-    <button mat-button>Loggout</button>
+    <a
+      *ngFor="let item of routes"
+      mat-list-item
+      (click)="sideNav.close()"
+      [routerLink]="[item.route]"
+      routerLinkActive="list-item-active"
+    >
+      <mat-icon matListIcon>{{ item.icon }}</mat-icon>
+      {{ item.title }}
+    </a>
   </mat-nav-list>
 </div>
